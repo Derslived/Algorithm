@@ -1,0 +1,62 @@
+package com.groot.day2;
+
+import java.util.Scanner;
+
+public class Program {
+
+    static void miniMaxSum(int[] arr) {
+
+        try {
+            long total = 0;
+            long min = arr[0];
+            long minTotal = 0;
+
+            long max = arr[0];
+            long maxTotal = 0;
+
+            for (int i = 0; i < arr.length; i++) {
+
+                if (min > arr[i]) {
+                    min = arr[i];
+                }
+
+                total += arr[i];
+
+                minTotal = total - min;
+
+                if (max < arr[i]) {
+                    max = arr[i];
+                }
+
+                maxTotal = total - max;
+
+            }
+
+            System.out.printf(("%d %d"),maxTotal, minTotal);
+            
+        } finally {
+            scanner.close();
+        }
+
+
+    }
+
+
+    private static final Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+
+        int[] arr = new int[5];
+
+        
+
+        for (int i = 0; i < arr.length; i++) {
+           arr[i] =  scanner.nextInt();
+        }
+
+        Program.miniMaxSum(arr);
+        
+
+    }
+
+}
